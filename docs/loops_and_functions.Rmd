@@ -1,0 +1,28 @@
+---
+title: "Loops & Functions"
+author: "Elise Gonzales"
+date: "2022-08-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Part 1
+
+Task 1
+```{r}
+weekdays <- c("Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun")
+transects <- c("Transect A", "Transect B", "Transect C")
+
+trans_out <- matrix(nrow = length(weekdays), ncol = length(transects))
+
+for (i in seq_along(weekdays)) {
+  for (j in seq_along(transects)) {
+    val_out <- paste(weekdays[i], "-", transects[j])
+          trans_out[i, j] <- val_out
+  }
+}
+```
+
