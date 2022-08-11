@@ -7,6 +7,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
 
 ##Part 1
@@ -26,3 +27,37 @@ for (i in seq_along(weekdays)) {
 }
 ```
 
+## Part 2
+
+Task 2
+```{r}
+force <- function(mass, acceleration) {
+  F <- (mass * acceleration)
+  print(paste("The resulting force is", F, "Newtons"))
+}
+
+force(3, 2)
+```
+
+Task 3
+```{r}
+#Store columns
+sci_name <- c("Chanos_chanos", "Sphyraena_barracuda", "Caranx")
+common_name <- c("Milkfish", "Great_barracuda", "Giant_trevally")
+a_est <- c(0.0905, 0.0181, 0.0353)
+b_est <- c(2.52, 3.27, 3.05)
+
+#Create data frame
+fish_parms <- data.frame(sci_name, common_name, a_est, b_est)
+
+#Create function
+fish_func <- function(a_est, tot_length, b_est) {
+  a_est * (tot_length ^ b_est)
+
+}
+
+fish_weight <- function(fish_name, tot_length){
+  fish.df <- filter(fish_parms)
+}
+```
+%in%
