@@ -51,13 +51,15 @@ b_est <- c(2.52, 3.27, 3.05)
 fish_parms <- data.frame(sci_name, common_name, a_est, b_est)
 
 #Create function
-fish_func <- function(a_est, tot_length, b_est) {
-  a_est * (tot_length ^ b_est)
-
-}
 
 fish_weight <- function(fish_name, tot_length){
-  fish.df <- filter(fish_parms)
+  fish.df <- filter(fish_parms, common_name == fish_name)
+  a_est <- fish.df$a_est
+  b_est <- fish.df$b_est
+  weight <- a_est * (tot_length ^ b_est)
+  return(weight)
 }
+fish_weight("Milkfish", 10)
+
 ```
-%in%
+
